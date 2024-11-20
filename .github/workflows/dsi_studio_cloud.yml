@@ -302,7 +302,7 @@ jobs:
           curl -sSLO "https://github.com/frankyeh/DSI-Studio/releases/download/2022.08.03/dsi_studio_ubuntu2004.zip" && unzip -q \*.zip
           ./dsi-studio/dsi_studio --action=trk --source=${{ matrix.files }} --fiber_count=1000000 --output=no_file --connectivity=${{ github.event.inputs.atlas }}          
       - name: Save Result
-        uses: actions/upload-artifact@v2.2.4
+        uses: actions/upload-artifact@v3
         with:
           name: ${{ github.event.inputs.id }}_connectivity_matrix
           path: |
