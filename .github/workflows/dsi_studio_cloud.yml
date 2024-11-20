@@ -66,13 +66,13 @@ jobs:
         run: cat ./${{ github.event.inputs.id }}/log.txt      
       - name: Save SRC files
         if: github.event.inputs.eddy == 'true' || github.event.inputs.acpc == 'true'
-        uses: actions/upload-artifact@v2.2.4
+        uses: actions/upload-artifact@v3
         with:
           name: ${{ github.event.inputs.id }}_raw_src
           path: ./*src.gz
       - name: Save SRC files
         if: github.event.inputs.eddy == 'false' && github.event.inputs.acpc == 'false'
-        uses: actions/upload-artifact@v2.2.4
+        uses: actions/upload-artifact@v3
         with:
           name: ${{ github.event.inputs.id }}_src
           path: ./*.src.gz          
