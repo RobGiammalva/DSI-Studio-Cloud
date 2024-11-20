@@ -159,7 +159,7 @@ jobs:
           ./dsi-studio/dsi_studio --action=rec --source=${{ matrix.files }} --save_src=${{ matrix.files }} --align_acpc=1
       - name: Save SRC Files
         if: github.event.inputs.eddy == 'true' || github.event.inputs.acpc == 'true'
-        uses: actions/upload-artifact@v2.2.4
+        uses: actions/upload-artifact@v3
         with:
           name: ${{ github.event.inputs.id }}_src
           path: ${{ matrix.files }}
